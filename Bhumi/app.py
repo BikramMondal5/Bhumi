@@ -9,7 +9,7 @@ import markdown
 app = Flask(__name__)
 
 # Configure Google Gemini API Key securely
-API_KEY = "AIzaSyCAk4mkNVUtb3Fqi1SoU_a4y6r7_sWhxxs"  # Use an environment variable
+API_KEY = "google-api-key"  # Use an environment variable
 client = genai.Client(api_key=API_KEY)
 
 # Function to generate AI response
