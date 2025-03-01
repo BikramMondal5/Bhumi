@@ -20,20 +20,38 @@ document.querySelectorAll('.action-button').forEach(button => {
     });
 });
 
-// Select elements
-const chatInput = document.querySelector('.chat-input');
+// Select elements for main chat (if you want to keep it)
+const chatInput = document.querySelector('.bottom-bar .chat-input');
 const sendButton = document.getElementById("send-button");
 const contentArea = document.getElementById("content-area");
 
-// Create chat history container if it doesn't exist
-let chatHistory = document.querySelector(".chat-history");
+// Select elements for chat widget
+const chatButton = document.getElementById("chat-button");
+const chatWidget = document.getElementById("chat-widget");
+const closeChat = document.getElementById("close-chat");
+const widgetChatInput = document.getElementById("widget-chat-input");
+const widgetSendButton = document.getElementById("widget-send-button");
+const chatWidgetMessages = document.getElementById("chat-widget-messages");
+
+// Toggle chat widget visibility
+chatButton.addEventListener("click", () => {
+    chatWidget.classList.toggle("active");
+});
+
+// Close chat widget
+closeChat.addEventListener("click", () => {
+    chatWidget.classList.remove("active");
+});
+
+// Create chat history container for main chat if you want to keep it
+let chatHistory = document.querySelector(".content-area .chat-history");
 if (!chatHistory) {
     chatHistory = document.createElement("div");
     chatHistory.className = "chat-history";
     contentArea.appendChild(chatHistory);
 }
 
-// Send message function
+// Send message function for main chat (if you want to keep it)
 async function sendMessage() {
     const message = chatInput.value.trim();
     if (message) {
@@ -44,7 +62,7 @@ async function sendMessage() {
         }
         
         // Add user message to chat
-        addMessageToHistory(message, true);
+        addMessageToHistory(message, true, chatHistory);
         
         // Show loading indicator
         const loadingDiv = document.createElement("div");
@@ -71,21 +89,66 @@ async function sendMessage() {
             chatHistory.removeChild(loadingDiv);
             
             if (data.error) {
-                addMessageToHistory("Error: " + data.error);
+                addMessageToHistory("Error: " + data.error, false, chatHistory);
             } else {
                 // Add AI response to chat
-                addAIMessageToHistory(data.response);
+                addAIMessageToHistory(data.response, chatHistory);
             }
         } catch (error) {
             // Remove loading indicator and show error
             chatHistory.removeChild(loadingDiv);
-            addMessageToHistory("Error: Unable to connect to the server. Please try again.");
+            addMessageToHistory("Error: Unable to connect to the server. Please try again.", false, chatHistory);
+        }
+    }
+}
+
+// Send message function for chat widget
+async function sendWidgetMessage() {
+    const message = widgetChatInput.value.trim();
+    if (message) {
+        // Add user message to chat widget
+        addMessageToHistory(message, true, chatWidgetMessages);
+        
+        // Show loading indicator
+        const loadingDiv = document.createElement("div");
+        loadingDiv.textContent = "Thinking...";
+        loadingDiv.className = "loading-message";
+        chatWidgetMessages.appendChild(loadingDiv);
+        
+        // Clear input field
+        widgetChatInput.value = '';
+        
+        try {
+            // Fetch AI response
+            const response = await fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ message: message })
+            });
+            
+            const data = await response.json();
+            
+            // Remove loading indicator
+            chatWidgetMessages.removeChild(loadingDiv);
+            
+            if (data.error) {
+                addMessageToHistory("Error: " + data.error, false, chatWidgetMessages);
+            } else {
+                // Add AI response to chat
+                addAIMessageToHistory(data.response, chatWidgetMessages);
+            }
+        } catch (error) {
+            // Remove loading indicator and show error
+            chatWidgetMessages.removeChild(loadingDiv);
+            addMessageToHistory("Error: Unable to connect to the server. Please try again.", false, chatWidgetMessages);
         }
     }
 }
 
 // Append user message to chat history
-function addMessageToHistory(message, isUser = false) {
+function addMessageToHistory(message, isUser = false, container) {
     const messageDiv = document.createElement("div");
     messageDiv.className = isUser ? "user-message" : "ai-message";
     messageDiv.textContent = message;
@@ -93,12 +156,12 @@ function addMessageToHistory(message, isUser = false) {
     // Add animation
     messageDiv.style.animation = "fadeIn 0.3s ease-in-out";
     
-    chatHistory.appendChild(messageDiv);
-    chatHistory.scrollTop = chatHistory.scrollHeight;
+    container.appendChild(messageDiv);
+    container.scrollTop = container.scrollHeight;
 }
 
 // Append AI message to chat history (with HTML support)
-function addAIMessageToHistory(htmlContent) {
+function addAIMessageToHistory(htmlContent, container) {
     const messageDiv = document.createElement("div");
     messageDiv.className = "ai-message";
     messageDiv.innerHTML = htmlContent;
@@ -106,16 +169,30 @@ function addAIMessageToHistory(htmlContent) {
     // Add animation
     messageDiv.style.animation = "fadeIn 0.3s ease-in-out";
     
-    chatHistory.appendChild(messageDiv);
-    chatHistory.scrollTop = chatHistory.scrollHeight;
+    container.appendChild(messageDiv);
+    container.scrollTop = container.scrollHeight;
 }
 
-// Handle send button click
-sendButton.addEventListener("click", sendMessage);
+// Handle send button click for main chat (if you want to keep it)
+if (sendButton) {
+    sendButton.addEventListener("click", sendMessage);
+}
 
-// Handle Enter key in chat input
-chatInput.addEventListener('keypress', (e) => {
+// Handle Enter key in chat input for main chat (if you want to keep it)
+if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+}
+
+// Handle send button click for chat widget
+widgetSendButton.addEventListener("click", sendWidgetMessage);
+
+// Handle Enter key in chat widget input
+widgetChatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        sendMessage();
+        sendWidgetMessage();
     }
 });
