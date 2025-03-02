@@ -127,27 +127,53 @@ body {
 .content-area {
     padding: 32px;
     flex: 1;
+    color: #000;
     overflow-y: auto;
+    background: #fff;
     scrollbar-width: thick;
     scrollbar-color: #4b5563 #374151;
 }
-
-.edubyte {
- font-size: 2rem;
- font-weight: bold;
+.model-heading{
+    font-size: 1.5rem;
+    font-weight:normal;
+    color: #fff;
+    
+}
+.together {
+ font-size: 1.5rem;
+ font-weight:normal;
+ font-family: consolas;
  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff5c74, #a05195);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
  margin-left: 0.5rem;
+ position: relative;
+ top: 5px;
 }
 .my-emoji{
-    font-size: 1.5rem;
-    margin-left: 7px;
+    font-size: 1.2rem;
+    margin-left: 3px;
     position: relative;
-    top: 7px;
-    font-weight: bold;
+    top: 5px;
+    font-weight:normal;
 }
-
+#model-avatar2{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url("icons/plant.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.img-div{
+    height: 6.7rem;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .heading {
  display: flex;
  flex-direction: row;
@@ -383,15 +409,6 @@ body {
     background-position: center;
 }
 
-#gemini-avatar{
-    background-image: url("icons/Gemini.png");
-    background-size: cover;
-    background-position: center;
-}
-#recipe-queen-avatar{
-    background-image: url("icons/chef-logo.jpg");
-    background-size: cover;
-} 
 
 /* Chat History Styles - Add to your existing CSS file */
 
@@ -589,4 +606,57 @@ body {
 .chat-widget.active {
     display: flex;
     animation: slideIn 0.3s ease forwards;
+}
+
+/* Dark theme background */
+.prompt{
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin-top: 20px;
+}
+
+/* Centered container */
+.prompt-container{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Glassmorphic button styling */
+.btn {
+    background: rgba(40, 40, 40, 0.6); /* Light black with transparency */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px); /* Glass effect */
+}
+
+/* Hover effect */
+.btn:hover {
+    background: rgba(60, 60, 60, 0.8);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+   
+
+/* Icons */
+.icon {
+    font-size: 18px;
 }
