@@ -12,119 +12,14 @@ body {
     display: flex;
 }
 
-/* Sidebar Styles */
-.sidebar {
-    width: 280px;
-    border-right: 1px solid #2D2D2D;
-    display: flex;
-    flex-direction: column;
-}
-
-.search-container {
-    padding: 8px;
-    position: relative;
-}
-
-.search-container i {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-}
-
-.search-input {
-    width: 100%;
-    padding: 8px 8px 8px 32px;
-    background: #2D2D2D;
-    border: 1px solid #a855f7;
-    border-radius: 6px;
-    color: white;
-    font-size: 14px;
-}
-
-.bots-list {
-    padding: 8px;
-}
-
-.bot-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.bot-item:hover {
-    background: #2D2D2D;
-}
-
-.bot-avatar {
-    width: 32px;
-    height: 32px;
-    background: #3D3D3D;
-    border-radius: 50%;
-}
-
-.more-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    color: white;
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.more-button:hover {
-    background: #2D2D2D;
-}
-
-.recent-section {
-    margin-top: 16px;
-}
-
-.recent-header {
-    padding: 8px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #666;
-    font-size: 14px;
-}
-
-.recent-chats {
-    padding: 8px;
-}
-
-.recent-chat-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #CCC;
-}
-
-.recent-chat-item:hover {
-    background: #2D2D2D;
-}
-
 /* Main Content Styles */
-.main-content {
+.bhumi-main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.content-area {
+.bhumi-content-area {
     padding: 32px;
     flex: 1;
     color: #000;
@@ -133,13 +28,12 @@ body {
     scrollbar-width: thick;
     scrollbar-color: #4b5563 #374151;
 }
-.model-heading{
+.bhumi-model-heading{
     font-size: 1.5rem;
     font-weight:normal;
     color: #fff;
-    
 }
-.together {
+.bhumi-together {
  font-size: 1.5rem;
  font-weight:normal;
  font-family: consolas;
@@ -150,22 +44,30 @@ body {
  position: relative;
  top: 5px;
 }
-.my-emoji{
+.bhumi-my-emoji{
     font-size: 1.2rem;
     margin-left: 3px;
     position: relative;
     top: 5px;
     font-weight:normal;
 }
-#model-avatar2{
+#bhumi-model-avatar{
+    width: 30px;
+    height: 30px;
+}
+#bhumi-model-avatar2{
     width: 90px;
     height: 90px;
-    border-radius: 50%;
+}
+
+.bhumi-bot-avatar{
     background-image: url("icons/plant.jpg");
+    border-radius: 50%;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
-.img-div{
+.bhumi-img-div{
     height: 6.7rem;
     width: 100%;
     background-color: transparent;
@@ -174,41 +76,41 @@ body {
     justify-content: center;
     align-items: center;
 }
-.heading {
+.bhumi-heading {
  display: flex;
  flex-direction: row;
  position: relative;
  bottom: 10px;
 }
 
-.section {
+.bhumi-section {
     margin-bottom: 32px;
 }
 
-.section-header {
+.bhumi-section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
 }
 
-.section-title {
+.bhumi-section-title {
     font-size: 18px;
     font-weight: 500;
 }
 
-.more-link {
+.bhumi-more-link {
     color: #3B82F6;
     text-decoration: none;
 }
 
-.tools-grid {
+.bhumi-tools-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
-.tool-item {
+.bhumi-tool-item {
     background: #2D2D2D;
     padding: 16px;
     border-radius: 12px;
@@ -219,51 +121,51 @@ body {
     cursor: pointer;
 }
 
-.tool-item:hover {
+.bhumi-tool-item:hover {
     background: #3D3D3D;
 }
 
-.tool-icon {
+.bhumi-tool-icon {
     font-size: 24px;
 }
 
-.tool-name {
+.bhumi-tool-name {
     font-size: 14px;
 }
 
-.image-cards {
+.bhumi-image-cards {
     display: grid;
     gap: 16px;
 }
 
-.image-card {
+.bhumi-image-card {
     background: #2D2D2D;
     padding: 16px;
     border-radius: 12px;
 }
 
-.image-card-header {
+.bhumi-image-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.card-title {
+.bhumi-card-title {
     font-weight: 500;
     margin-bottom: 4px;
 }
 
-.card-subtitle {
+.bhumi-card-subtitle {
     font-size: 14px;
     color: #666;
 }
 
-.model-badges {
+.bhumi-model-badges {
     display: flex;
     gap: 8px;
 }
 
-.model-badge {
+.bhumi-model-badge {
     padding: 5px 3px 5px 3px; 
     background: #3D3D3D;
     border-radius: 6px;
@@ -274,19 +176,19 @@ body {
 }
 
 /* Bottom Bar Styles */
-.bottom-bar {
+.bhumi-bottom-bar {
     border-top: 1px solid #2D2D2D;
     padding: 16px;
 }
 
-.action-buttons {
+.bhumi-action-buttons {
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
     overflow-x: auto;
 }
 
-.action-button {
+.bhumi-action-button {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -299,93 +201,12 @@ body {
     font-size: 14px;
 }
 
-.action-button:hover {
+.bhumi-action-button:hover {
     background: #2D2D2D;
     border-radius: 6px;
 }
 
-.chat-input-container {
-    background: #2D2D2D;
-    border-radius: 12px;
-    padding: 8px;
-    height: 130px;
-    width: 100%;
-}
-
-.chat-input-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    padding: 0 8px;
-    position: relative;
-    top: 3px;
-}
-
-.chat-controls {
-    margin-left: auto;
-    display: flex;
-    gap: 8px;
-}
-
-.control-button {
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 4px;
-    border-radius: 4px;
-}
-
-.control-button:hover {
-    background: #3D3D3D;
-    color: white;
-}
-
-.chat-input-footer {
-    display: flex;
-    gap: 8px;
-    padding: 0 8px;
-    height: 90px;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.chat-input {
-    flex: 1;
-    background: none;
-    border: none;
-    color: white;
-    height: 30px; 
-    font-size: 17px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.chat-input:focus {
-    outline: none;
-}
-
-.send-button {
-    background: #3B82F6;
-    border: none;
-    color: white;
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.send-button:hover {
-    background: #2563EB;
-}
-
-#model-avatar{
-    background-image: url("icons/plant.jpg");
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
-.models-name{
+.bhumi-models-name{
     cursor: pointer;
     font-size: 15px;
     font-weight: 470;
@@ -397,22 +218,10 @@ body {
     margin-left: 7px;
 }
 
-#gpt-4o-avatar{
-    background-image: url("icons/openai-logo.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-#DeepSeek-avatar{
-    background-image: url("icons/deepseek-logo-icon.png");
-    background-size: cover;
-    background-position: center;
-}
-
 
 /* Chat History Styles - Add to your existing CSS file */
 
-.chat-history {
+.bhumi-chat-history {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -422,7 +231,7 @@ body {
     scrollbar-color: #4b5563 #374151;
 }
 
-.user-message, .ai-message {
+.bhumi-user-message, .bhumi-ai-message {
     max-width: 80%;
     padding: 12px 16px;
     margin: 8px 0;
@@ -431,21 +240,21 @@ body {
     word-wrap: break-word;
 }
 
-.user-message {
+.bhumi-user-message {
     align-self: flex-end;
     background-color: #3B82F6;
     color: white;
     margin-left: auto;
 }
 
-.ai-message {
+.bhumi-ai-message {
     align-self: flex-start;
     background-color: #2D2D2D;
     color: #f9f9f9;
     margin-right: auto;
 }
 
-.loading-message {
+.bhumi-loading-message {
     align-self: flex-start;
     font-style: italic;
     color: #CCC;
@@ -453,54 +262,54 @@ body {
     padding: 8px 12px;
     background-color: #2D2D2D;
     border-radius: 12px;
-    animation: pulse 1.5s infinite;
+    animation: bhumi-pulse 1.5s infinite;
 }
 
-@keyframes pulse {
+@keyframes bhumi-pulse {
     0% { opacity: 0.6; }
     50% { opacity: 1; }
     100% { opacity: 0.6; }
 }
 
 /* Animation for messages */
-@keyframes fadeIn {
+@keyframes bhumi-fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* Markdown styling for AI responses - matches your dark theme */
-.ai-message h1, .ai-message h2, .ai-message h3 {
+.bhumi-ai-message h1, .bhumi-ai-message h2, .bhumi-ai-message h3 {
     margin-top: 10px;
     margin-bottom: 8px;
     color: #f9f9f9;
 }
 
-.ai-message ul, .ai-message ol {
+.bhumi-ai-message ul, .bhumi-ai-message ol {
     margin-left: 20px;
     margin-bottom: 10px;
 }
 
-.ai-message p {
+.bhumi-ai-message p {
     margin-bottom: 8px;
 }
 
-.ai-message a {
+.bhumi-ai-message a {
     color: #3B82F6;
     text-decoration: none;
 }
 
-.ai-message a:hover {
+.bhumi-ai-message a:hover {
     text-decoration: underline;
 }
 
-.ai-message code {
+.bhumi-ai-message code {
     background-color: #3D3D3D;
     padding: 2px 4px;
     border-radius: 3px;
     font-family: monospace;
 }
 
-.ai-message pre {
+.bhumi-ai-message pre {
     background-color: #3D3D3D;
     padding: 16px;
     border-radius: 6px;
@@ -509,7 +318,7 @@ body {
 }
 
 /* Ensure emoji display properly */
-.ai-message img.emoji {
+.bhumi-ai-message img.emoji {
     height: 1em;
     width: 1em;
     margin: 0 .05em 0 .1em;
@@ -517,7 +326,7 @@ body {
 }
 
 /* Chat Button Styles */
-.chat-button {
+.bhumi-chat-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -537,13 +346,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.chat-button:hover {
+.bhumi-chat-button:hover {
     transform: scale(1.05);
     background-color: #9333ea;
 }
 
 /* Chat Widget Styles */
-.chat-widget {
+.bhumi-chat-widget {
     position: fixed;
     bottom: 90px;
     right: 20px;
@@ -560,7 +369,7 @@ body {
     border: 1px solid #2D2D2D;
 }
 
-.chat-widget-header {
+.bhumi-chat-widget-header {
     display: flex;
     align-items: center;
     padding: 15px;
@@ -568,7 +377,7 @@ body {
     border-bottom: 1px solid #3D3D3D;
 }
 
-.close-chat-button {
+.bhumi-close-chat-button {
     margin-left: auto;
     background: none;
     border: none;
@@ -579,11 +388,11 @@ body {
     transition: color 0.2s ease;
 }
 
-.close-chat-button:hover {
+.bhumi-close-chat-button:hover {
     color: white;
 }
 
-.chat-widget-input {
+.bhumi-chat-widget-input {
     padding: 10px;
     border-top: 1px solid #2D2D2D;
     background-color: #2D2D2D;
@@ -591,25 +400,25 @@ body {
     align-items: center;
 }
 
-#chat-widget-messages {
+#bhumi-chat-widget-messages {
     flex: 1;
     padding: 15px;
     overflow-y: auto;
 }
 
 /* Animation for the chat widget */
-@keyframes slideIn {
+@keyframes bhumi-slideIn {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-.chat-widget.active {
+.bhumi-chat-widget.active {
     display: flex;
-    animation: slideIn 0.3s ease forwards;
+    animation: bhumi-slideIn 0.3s ease forwards;
 }
 
 /* Dark theme background */
-.prompt{
+.bhumi-prompt {
     font-family: Arial, sans-serif;
     background-color: transparent;
     color: white;
@@ -621,11 +430,12 @@ body {
 }
 
 /* Centered container */
-.prompt-container{
+.bhumi-prompt-container {
     text-align: center;
     margin-bottom: 30px;
 }
-.buttons {
+
+.bhumi-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -634,7 +444,7 @@ body {
 }
 
 /* Glassmorphic button styling */
-.btn {
+.bhumi-btn {
     background: rgba(40, 40, 40, 0.6); /* Light black with transparency */
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -650,13 +460,69 @@ body {
 }
 
 /* Hover effect */
-.btn:hover {
+.bhumi-btn:hover {
     background: rgba(60, 60, 60, 0.8);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
-   
 
 /* Icons */
-.icon {
+.bhumi-icon {
     font-size: 18px;
+}
+/* end */
+/* Chat input styling */
+.bhumi-chat-input {
+    flex: 1;
+    border: none;
+    background-color: #3D3D3D;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.bhumi-chat-input::placeholder {
+    color: #999;
+}
+
+/* Chat controls styling */
+.bhumi-chat-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.bhumi-control-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.bhumi-control-button:hover, 
+.bhumi-send-button:hover {
+    color: white;
+}
+
+.bhumi-send-button {
+    background-color: #a855f7;
+    color: white;
+    border: none;
+    width: 27px;
+    height: 27px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.bhumi-send-button:hover {
+    background-color: #9333ea;
 }

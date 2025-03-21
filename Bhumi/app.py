@@ -9,7 +9,7 @@ import markdown
 app = Flask(__name__)
 
 # Configure Google Gemini API Key securely
-API_KEY = ""  # Use an environment variable
+API_KEY = os.environ.get("gemini-api")  # Use an environment variable
 client = genai.Client(api_key=API_KEY)
 
 # Function to generate AI response
@@ -81,10 +81,6 @@ def chat():
 @app.route('/', methods=["GET"])
 def landing_page():
     return render_template('index.html')
-
-@app.route('/dashboard', methods=["GET"])
-def home_page():
-    return render_template('home.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
