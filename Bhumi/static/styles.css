@@ -13,7 +13,7 @@ body {
 }
 
 /* Main Content Styles */
-.bhumi-main-content {
+/* .bhumi-main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,24 @@ body {
     background: #fff;
     scrollbar-width: thick;
     scrollbar-color: #4b5563 #374151;
+} */
+
+/* Change the chat container positioning */
+.bhumi-main-content, .bhumi-content-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Make it not take up layout space */
+    pointer-events: none;
+    background: transparent;
+    padding: 0;
+}
+  
+/* Make the chat button and widget still receive clicks */
+.bhumi-chat-button, .bhumi-chat-widget {
+    pointer-events: all;
 }
 .bhumi-model-heading{
     font-size: 1.5rem;
@@ -42,13 +60,13 @@ body {
  -webkit-text-fill-color: transparent;
  margin-left: 0.5rem;
  position: relative;
- top: 5px;
+ bottom: 3px;
 }
 .bhumi-my-emoji{
     font-size: 1.2rem;
     margin-left: 3px;
     position: relative;
-    top: 5px;
+    bottom: 3px;
     font-weight:normal;
 }
 #bhumi-model-avatar{
@@ -61,7 +79,7 @@ body {
 }
 
 .bhumi-bot-avatar{
-    background-image: url("icons/plant.jpg");
+    background-image: url("plant.jpg");
     border-radius: 50%;
     background-size: cover;
     background-position: center;
