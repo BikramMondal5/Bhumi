@@ -79,7 +79,7 @@ body {
 }
 
 .bhumi-bot-avatar{
-    background-image: url("plant.jpg");
+    background-image: url("icons/plant.jpg");
     border-radius: 50%;
     background-size: cover;
     background-position: center;
