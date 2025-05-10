@@ -1,8 +1,6 @@
-# Bhumi - Let's grow together
+# 🌿🤖 Bhumi - Let's grow together
 
 An AI-powered assistant that helps farmers with sustainable agriculture advice, best farming practices, and crop-specific guidance using Google Gemini.
-
----
 
 ## 🌟 Features
 - AI-driven chat assistant for farmers
@@ -23,7 +21,7 @@ An AI-powered assistant that helps farmers with sustainable agriculture advice, 
 ## ⚙️ Installation
 1. **Clone the repository:**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/BikramMondal5/Bhumi.git
    cd Bhumi
    ```
 2. **Create a virtual environment (optional but recommended):**
