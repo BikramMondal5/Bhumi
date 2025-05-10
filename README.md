@@ -1,6 +1,6 @@
 # 🌿🤖 Bhumi - Let's grow together
 
-An AI-powered assistant that helps farmers with sustainable agriculture advice, best farming practices, and crop-specific guidance using Google Gemini.
+An AI assistant that helps farmers with sustainable agriculture advice, best farming practices, and crop-specific guidance using Google Gemini
 
 ## 🌟 Features
 - AI-driven chat assistant for farmers
