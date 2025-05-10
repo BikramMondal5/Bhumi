@@ -1,0 +1,546 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #1C1C1C;
+    color: white;
+    height: 100vh;
+    display: flex;
+}
+
+/* Main Content Styles */
+/* .bhumi-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bhumi-content-area {
+    padding: 32px;
+    flex: 1;
+    color: #000;
+    overflow-y: auto;
+    background: #fff;
+    scrollbar-width: thick;
+    scrollbar-color: #4b5563 #374151;
+} */
+
+/* Change the chat container positioning */
+.bhumi-main-content, .bhumi-content-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Make it not take up layout space */
+    pointer-events: none;
+    background: transparent;
+    padding: 0;
+}
+  
+/* Make the chat button and widget still receive clicks */
+.bhumi-chat-button, .bhumi-chat-widget {
+    pointer-events: all;
+}
+.bhumi-model-heading{
+    font-size: 1.5rem;
+    font-weight:normal;
+    color: #fff;
+}
+.bhumi-together {
+ font-size: 1.5rem;
+ font-weight:normal;
+ font-family: consolas;
+ background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff5c74, #a05195);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ margin-left: 0.5rem;
+ position: relative;
+ bottom: 3px;
+}
+.bhumi-my-emoji{
+    font-size: 1.2rem;
+    margin-left: 3px;
+    position: relative;
+    bottom: 3px;
+    font-weight:normal;
+}
+#bhumi-model-avatar{
+    width: 30px;
+    height: 30px;
+}
+#bhumi-model-avatar2{
+    width: 90px;
+    height: 90px;
+}
+
+.bhumi-bot-avatar{
+    background-image: url("plant.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.bhumi-img-div{
+    height: 6.7rem;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bhumi-heading {
+ display: flex;
+ flex-direction: row;
+ position: relative;
+ bottom: 10px;
+}
+
+.bhumi-section {
+    margin-bottom: 32px;
+}
+
+.bhumi-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.bhumi-section-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.bhumi-more-link {
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+.bhumi-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.bhumi-tool-item {
+    background: #2D2D2D;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.bhumi-tool-item:hover {
+    background: #3D3D3D;
+}
+
+.bhumi-tool-icon {
+    font-size: 24px;
+}
+
+.bhumi-tool-name {
+    font-size: 14px;
+}
+
+.bhumi-image-cards {
+    display: grid;
+    gap: 16px;
+}
+
+.bhumi-image-card {
+    background: #2D2D2D;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.bhumi-image-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bhumi-card-title {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.bhumi-card-subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.bhumi-model-badges {
+    display: flex;
+    gap: 8px;
+}
+
+.bhumi-model-badge {
+    padding: 5px 3px 5px 3px; 
+    background: #3D3D3D;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Bottom Bar Styles */
+.bhumi-bottom-bar {
+    border-top: 1px solid #2D2D2D;
+    padding: 16px;
+}
+
+.bhumi-action-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+}
+
+.bhumi-action-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.bhumi-action-button:hover {
+    background: #2D2D2D;
+    border-radius: 6px;
+}
+
+.bhumi-models-name{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 470;
+    border: 1px solid #a855f7;
+    color: #a855f7;
+    font-family: Arial, sans-serif;
+    border-radius: 20px;
+    padding: 7px 14px;
+    margin-left: 7px;
+}
+
+
+/* Chat History Styles - Add to your existing CSS file */
+
+.bhumi-chat-history {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #374151;
+}
+
+.bhumi-user-message, .bhumi-ai-message {
+    max-width: 80%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 12px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.bhumi-user-message {
+    align-self: flex-end;
+    background-color: #3B82F6;
+    color: white;
+    margin-left: auto;
+}
+
+.bhumi-ai-message {
+    align-self: flex-start;
+    background-color: #2D2D2D;
+    color: #f9f9f9;
+    margin-right: auto;
+}
+
+.bhumi-loading-message {
+    align-self: flex-start;
+    font-style: italic;
+    color: #CCC;
+    margin: 8px 0;
+    padding: 8px 12px;
+    background-color: #2D2D2D;
+    border-radius: 12px;
+    animation: bhumi-pulse 1.5s infinite;
+}
+
+@keyframes bhumi-pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Animation for messages */
+@keyframes bhumi-fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Markdown styling for AI responses - matches your dark theme */
+.bhumi-ai-message h1, .bhumi-ai-message h2, .bhumi-ai-message h3 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: #f9f9f9;
+}
+
+.bhumi-ai-message ul, .bhumi-ai-message ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.bhumi-ai-message p {
+    margin-bottom: 8px;
+}
+
+.bhumi-ai-message a {
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+.bhumi-ai-message a:hover {
+    text-decoration: underline;
+}
+
+.bhumi-ai-message code {
+    background-color: #3D3D3D;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.bhumi-ai-message pre {
+    background-color: #3D3D3D;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+/* Ensure emoji display properly */
+.bhumi-ai-message img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+/* Chat Button Styles */
+.bhumi-chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #a855f7;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.bhumi-chat-button:hover {
+    transform: scale(1.05);
+    background-color: #9333ea;
+}
+
+/* Chat Widget Styles */
+.bhumi-chat-widget {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: #1C1C1C;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    display: none; /* Hidden by default */
+    border: 1px solid #2D2D2D;
+}
+
+.bhumi-chat-widget-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #2D2D2D;
+    border-bottom: 1px solid #3D3D3D;
+}
+
+.bhumi-close-chat-button {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.bhumi-close-chat-button:hover {
+    color: white;
+}
+
+.bhumi-chat-widget-input {
+    padding: 10px;
+    border-top: 1px solid #2D2D2D;
+    background-color: #2D2D2D;
+    display: flex;
+    align-items: center;
+}
+
+#bhumi-chat-widget-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Animation for the chat widget */
+@keyframes bhumi-slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.bhumi-chat-widget.active {
+    display: flex;
+    animation: bhumi-slideIn 0.3s ease forwards;
+}
+
+/* Dark theme background */
+.bhumi-prompt {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin-top: 20px;
+}
+
+/* Centered container */
+.bhumi-prompt-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bhumi-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Glassmorphic button styling */
+.bhumi-btn {
+    background: rgba(40, 40, 40, 0.6); /* Light black with transparency */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px); /* Glass effect */
+}
+
+/* Hover effect */
+.bhumi-btn:hover {
+    background: rgba(60, 60, 60, 0.8);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Icons */
+.bhumi-icon {
+    font-size: 18px;
+}
+/* end */
+/* Chat input styling */
+.bhumi-chat-input {
+    flex: 1;
+    border: none;
+    background-color: #3D3D3D;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.bhumi-chat-input::placeholder {
+    color: #999;
+}
+
+/* Chat controls styling */
+.bhumi-chat-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.bhumi-control-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.bhumi-control-button:hover, 
+.bhumi-send-button:hover {
+    color: white;
+}
+
+.bhumi-send-button {
+    background-color: #a855f7;
+    color: white;
+    border: none;
+    width: 27px;
+    height: 27px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.bhumi-send-button:hover {
+    background-color: #9333ea;
+}
