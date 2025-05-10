@@ -4,8 +4,8 @@ An AI assistant that helps farmers with sustainable agriculture advice, best far
 
 ## 🌟 Features
 - AI-driven chat assistant for farmers
-- Crop-specific advice (soil, watering, diseases, fertilization, weather, post-harvest)
-- General farming tips (soil fertility, pest control, composting, etc.)
+- Crop-specific advice
+- General farming tips 
 - Simple, farmer-friendly responses
 - Step-by-step instructions for common queries
 - Weather-based and eco-friendly suggestions
@@ -13,10 +13,10 @@ An AI assistant that helps farmers with sustainable agriculture advice, best far
 
 ## 🛠️ Technologies Used
 - Python 3
-- Flask (web framework)
-- Google Gemini (genai) API
-- HTML, CSS, JavaScript (frontend)
-- Markdown (for AI response formatting)
+- Flask
+- Google Gemini 2.0 Flash API
+- HTML, CSS, JavaScript
+
 
 ## ⚙️ Installation
 1. **Clone the repository:**
